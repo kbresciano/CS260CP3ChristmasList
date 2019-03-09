@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link href='https://fonts.googleapis.com/css?family=Mountains of Christmas' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css" />
+  <title>CP 3</title>
+</head>
+
+<body>
+  <div id="app">
+  <div v-if="festive" id="christmasTheme">
+    <h1>DEAR SANTA</h1>
+    <p>Instantly tell Santa what you'd like for Christmas this year!</p>
+
+    <form v-on:submit.prevent="addItem">
+      <input type="text" v-model="message">
+      <button type="submit">I want this</button>
+    </form>
+
+    <ul>
+      <li v-for="item in list" draggable="true" v-on:dragstart="dragItem(item)" v-on:dragover.prevent v-on:drop="dropItem(item)">
+        <label>{{ item.text }}</label>
+        <button v-on:click="deleteItem(item)" class="delete">I don't want this</button>
+      </li>
+    </ul>
+
+    <div class="controls">
+      <p>Do you want to feel the Christmas Spirit?</p>
+      <button v-on:click="festiveOn()">Yes</button>
+      <button v-on:click="festiveOff()">No</button>
+    </div>
+
+    <h2>Add a Note for Santa</h2>
+    <form v-on:submit.prevent="addNote">
+      <textarea v-model="addedNote"></textarea>
+      <br />
+      <button type="submit">Add Note</button>
+    </form>
+    <h3>Previous Notes</h3>
+    <div v-for="note in notes">
+      <hr>
+      <p>{{note.text}}</p>
+      <p><i>--Written {{note.dateTime}}</i></p>
+    </div>
+  </div>
+
+  <div v-else id="plain">
+    <h1>DEAR SANTA</h1>
+    <p>Instantly tell Santa what you'd like for Christmas this year!</p>
+
+    <form v-on:submit.prevent="addItem">
+      <input type="text" v-model="message">
+      <button type="submit">I want this</button>
+    </form>
+
+    <ul>
+      <li v-for="item in list" draggable="true" v-on:dragstart="dragItem(item)" v-on:dragover.prevent v-on:drop="dropItem(item)">
+        <label>{{ item.text }}</label>
+        <button v-on:click="deleteItem(item)" class="delete">I don't want this</button>
+      </li>
+    </ul>
+
+    <div class="controls">
+      <p>Do you want to feel the Christmas Spirit?</p>
+      <button v-on:click="festiveOn()">Yes</button>
+      <button v-on:click="festiveOff()">No</button>
+    </div>
+
+    <h2>Add a Note for Santa</h2>
+    <form v-on:submit.prevent="addNote">
+      <textarea v-model="addedNote"></textarea>
+      <br />
+      <button type="submit">Add Note</button>
+    </form>
+    <h3>Previous Notes</h3>
+    <div v-for="note in notes">
+      <hr>
+      <p>{{note.text}}</p>
+      <p><i>--Written {{note.dateTime}}</i></p>
+    </div>
+  </div>
+  </div>
+
+  <footer>
+    <hr>
+    <p><a id="footerLink" href="https://github.com/kbresciano/CS260CP3ChristmasList">Link to GitHub Repo</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

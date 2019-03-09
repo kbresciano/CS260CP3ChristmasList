@@ -1,0 +1,96 @@
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    padding: 20px 100px 0px 100px;
+    background: #99b898;
+}
+
+/* List */
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: #fff;
+    width: 500px;
+    min-height: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.delete {
+    display: none;
+    margin-left: auto;
+}
+
+li:hover .delete {
+    display: block;
+}
+
+label {
+    width: 400px;
+}
+
+/* Form */
+
+input[type=text] {
+    font-size: 1em;
+}
+
+button {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 1em;
+}
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+    height: 100px;
+}
+
+/* Controls */
+
+.controls {
+    margin-top: 20px;
+}
+
+/* Festive*/
+
+#christmasTheme {
+  font-family: 'Mountains of Christmas';
+  color: #94090d;
+}
+
+#christmasTheme li {
+  background-color: #e5d674;
+  color: #336633;
+  width: 500px;
+  min-height: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+}
+
+#christmasTheme input[type=text] {
+    font-family: 'Mountains of Christmas'
+    font-size: 1em;
+    color: #94090d;
+}
+
+#christmasTheme button {
+    font-family: 'Mountains of Christmas';
+    font-size: 1em;
+}
+
+#christmasTheme textarea {
+    width: 100%;
+    max-width: 500px;
+    height: 100px;
+    color: #94090d;
+}
