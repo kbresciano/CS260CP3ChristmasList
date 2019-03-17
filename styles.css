@@ -11,16 +11,6 @@ ul {
     list-style: none;
 }
 
-li {
-    background: #fff;
-    width: 500px;
-    min-height: 30px;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 1em;
-    display: flex;
-    align-items: center;
-}
 
 .delete {
     display: none;
@@ -52,6 +42,11 @@ textarea {
     height: 100px;
 }
 
+footer{
+  width: 100%;
+bottom:0;
+}
+
 /* Controls */
 
 .controls {
@@ -63,18 +58,7 @@ textarea {
 #christmasTheme {
   font-family: 'Mountains of Christmas';
   color: #94090d;
-}
-
-#christmasTheme li {
-  background-color: #e5d674;
-  color: #336633;
-  width: 500px;
-  min-height: 30px;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 1em;
-  display: flex;
-  align-items: center;
+  float: left;
 }
 
 #christmasTheme input[type=text] {
@@ -93,4 +77,53 @@ textarea {
     max-width: 500px;
     height: 100px;
     color: #94090d;
+}
+
+/** Lights */
+
+
+.lightrope {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  width: 100%;
+  float: left;
+}
+
+@keyframes flash {
+    0%, 100% { background: rgba(247,0,0,1);
+    box-shadow: 0px 28px/6 12px*2 3px rgba(247,0,0,1);}
+    50% { background: rgba(11,102,35,0.5);
+    box-shadow: 0px 28px/6 12px*2 3px rgba(11,102,35,0.2);}
+}
+
+.lightrope li {
+  animation-fill-mode: both;
+  animation-iteration-count:infinite;
+  list-style: none;
+  margin: 10px;
+  padding: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  background: rgba(0,247,165,1);
+  box-shadow: 0px 28px/6 12px*2 3px rgba(0,247,165,1);
+  animation-name: flash;
+  animation-duration: 2s;
+}
+li {
+  background-color: #fff;
+  width: 500px;
+  min-height: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
 }
